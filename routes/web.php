@@ -163,3 +163,8 @@ Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
 
 Route::get("study-question", [ QuizController::class, "question" ])->name("study-question");
 Route::post("study-match", [ QuizController::class, "match" ])->name("study-match");
+
+//w5
+use App\Http\Controllers\Covid19Controller;
+Route::get('/covid19', [ Covid19Controller::class,"index" ]);
+
