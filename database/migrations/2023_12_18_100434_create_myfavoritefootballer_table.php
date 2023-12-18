@@ -21,7 +21,6 @@ class CreateMyfavoritefootballerTable extends Migration
             $table->string('Country')->nullable();
             $table->date('Age')->nullable();
             $table->text('Skill')->nullable();
-
         });
     }
 

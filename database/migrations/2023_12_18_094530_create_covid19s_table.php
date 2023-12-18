@@ -16,7 +16,6 @@ class CreateCovid19sTable extends Migration
         Schema::create('covid19s', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->date('date')->nullable();
             $table->string('country')->nullable();
             $table->integer('total')->nullable();

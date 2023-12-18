@@ -17,7 +17,6 @@ class AddABCColumnsToCovid19sTable extends Migration
             $table->float('a',16,2)->nullable();          //เพิ่มคอลัมน์ใหม่ type float 16 bit 2 จุดทศนิยม null ได้
             $table->float('remark',16,2)->nullable();     //เพิ่มคอลัมน์ใหม่ type float 16 bit 2 จุดทศนิยม null ได้
             $table->float('c',16,2)->nullable();          //เพิ่มคอลัมน์ใหม่ type float 16 bit 2 จุดทศนิยม null ได้
-
         });
     }
 
