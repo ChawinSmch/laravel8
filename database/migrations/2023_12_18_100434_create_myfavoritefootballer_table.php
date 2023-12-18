@@ -16,7 +16,6 @@ class CreateMyfavoritefootballerTable extends Migration
         Schema::create('myfavoritefootballer', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->integer('Number')->nullable();
             $table->float('Height')->nullable();
             $table->string('Country')->nullable();
