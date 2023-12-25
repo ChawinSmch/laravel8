@@ -166,5 +166,22 @@ Route::post("study-match", [ QuizController::class, "match" ])->name("study-matc
 
 //w5
 use App\Http\Controllers\Covid19Controller;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StaffController;
+
 Route::get('/covid19', [ Covid19Controller::class,"index" ]);
 
+
+//w6
+
+Route::get("/product", [ProductController::class, "index"])->name('product.index');
+Route::get("/product/create", [ProductController::class, "create"])->name('product.create');
+Route::post("/product", [ProductController::class, "store"])->name('product.store');
+Route::get('/product/{id}', [ProductController::class, "show"])->name('product.show');
+Route::get("/product/{id}/edit", [ProductController::class, "edit"])->name('product.edit');
+Route::patch("/product/{id}", [ProductController::class, "update"])->name('product.update');
+Route::delete("/product/{id}", [ProductController::class, "destroy"])->name('product.destroy');
+
+// Route::resource('/product', ProductController::class );
+
+Route::resource('/staff', StaffController::class );
