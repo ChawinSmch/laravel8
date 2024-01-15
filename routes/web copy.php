@@ -86,11 +86,11 @@ Route::get("/gallery/cat", function () {
 
 Route::get("/teacher" , function (){
 	return view("teacher");
-})->middleware('auth', 'role:admin,teacher');
+});
 
 Route::get("/student" , function (){
 	return view("student");
-})->middleware('auth', 'role:guest');
+});
 
 Route::get("/theme" , function (){
 	return view("theme");
@@ -116,7 +116,7 @@ Route::get("/student/component", function () {
 //bootstrap-template
 Route::get('/tables', function () {
     return view('tables');
-})->middleware('auth', 'role:admin');
+});
 
 //W4
 Route::get("/myprofile/create",[ MyProfileController::class , "create" ]);
@@ -173,36 +173,15 @@ Route::get('/covid19', [ Covid19Controller::class,"index" ]);
 
 
 //w6
-//READ ONLY
-Route::middleware(['auth', 'role:admin,guest'])->group(function () {
-Route::get("/product", [ProductController::class, "index"])->name('product.index');   
-Route::get('/product/{id}', [ProductController::class, "show"])->name('product.show');
-});
-//WRITE ONLY
-Route::middleware(['auth', 'role:admin'])->group(function () {
+
+Route::get("/product", [ProductController::class, "index"])->name('product.index');
 Route::get("/product/create", [ProductController::class, "create"])->name('product.create');
 Route::post("/product", [ProductController::class, "store"])->name('product.store');
+Route::get('/product/{id}', [ProductController::class, "show"])->name('product.show');
 Route::get("/product/{id}/edit", [ProductController::class, "edit"])->name('product.edit');
 Route::patch("/product/{id}", [ProductController::class, "update"])->name('product.update');
 Route::delete("/product/{id}", [ProductController::class, "destroy"])->name('product.destroy');
-});
 
 // Route::resource('/product', ProductController::class );
 
 Route::resource('/staff', StaffController::class );
-
-//ww8
-Route::get('/dashboard', function () {
-    // if(Auth::user()->role == "admin"){
-	// 	return redirect("product");
-    // }else if(Auth::user()->role == "teacher"){
-	// 	return redirect("teacher");
-    // }
-
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__ . '/auth.php';
-
-//แก้ไขใน w6
-
