@@ -4,6 +4,8 @@ use App\Http\Controllers\MyProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -206,3 +208,6 @@ require __DIR__ . '/auth.php';
 
 //แก้ไขใน w6
 
+//w9
+//Route::resource('post', 'PostController');
+Route::resource('post', PostController::class);
