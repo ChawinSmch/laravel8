@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\ProfileController;  
+use App\Http\Controllers\UserController;  
+use App\Http\Controllers\VehicleController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -211,3 +213,7 @@ require __DIR__ . '/auth.php';
 //w9
 //Route::resource('post', 'PostController');
 Route::resource('post', PostController::class);
+
+Route::resource('profile', ProfileController::class);
+Route::resource('user', UserController::class);
+Route::resource('vehicle', VehicleController::class);
