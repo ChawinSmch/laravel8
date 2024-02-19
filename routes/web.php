@@ -11,6 +11,7 @@ use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\QuotationDetailController;
+use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -233,5 +234,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('quotation-detail', QuotationDetailController::class);
 });
 
-
+//w11
+Route::get('/test/pdf', function(){
+    $a = "hello";
+    $b = "world";
+    $c = "ทดสอบภาษาไทย";
+    $pdf = Pdf::loadView('testpdf', compact('a','b','c'));
+    return $pdf->stream();
+});
 

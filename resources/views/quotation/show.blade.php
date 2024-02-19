@@ -135,13 +135,25 @@
                                         <td>{{ $item->total }}</td>
                                         {{-- <td>{{ $item->remark }}</td> --}}
                                         <td>
-                                             <a href="{{ url('/quotation-detail/' . $item->id) }}"
+                                            <a href="{{ url('/quotation-detail/' . $item->id) }}"
                                                 title="View QuotationDetail"><button class="btn btn-info btn-sm"><i
                                                         class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/quotation-detail/' . $item->id . '/edit') }}"
                                                 title="Edit QuotationDetail"><button class="btn btn-primary btn-sm"><i
                                                         class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                     Edit</button></a>
+
+                                            <a href="{{ url('/quotation/' . $quotation->id . '/pdf') }}"
+                                                title="PDF">
+                                                <button class="btn btn-success btn-sm">
+                                                    <i class="fa fa-file" aria-hidden="true"></i> PDF
+                                                </button>
+                                            </a>
+                                            <button class="btn btn-secondary btn-sm" onclick="window.print();">
+                                                <i class="fa fa-print" aria-hidden="true"></i>
+                                                พิมพ์หน้านี้
+                                            </button>
+
 
                                             <form method="POST"
                                                 action="{{ url('/quotation-detail' . '/' . $item->id) }}"
